@@ -69,6 +69,7 @@ const gameOver = () => {
   const finishTime = new Date().getTime();
   const timeTaken = (finishTime - startTime) / 1000;
 
+
   // show result modal
   resultModal.innerHTML = "";
   resultModal.classList.toggle("hidden");
@@ -117,7 +118,7 @@ const start = () => {
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "none";
-      display.classList.add("inactive");
+      display.classList.remove("inactive");
 
       clearInterval(startCountdown);
       startTime = new Date().getTime();
@@ -125,6 +126,7 @@ const start = () => {
     count--;
   }, 1000);
 };
+
 
 // START Countdown
 startBtn.addEventListener("click", start);
@@ -136,10 +138,14 @@ displayHistory();
 setInterval(() => {
   const currentTime = new Date().getTime();
   const timeSpent = (currentTime - startTime) / 1000;
+  const newTimeSpent = Math.floor(timeSpent);
 
 
 
 
 
-  document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
+
+
+
+  document.getElementById("show-time").innerHTML = `${startTime ? newTimeSpent : 0} seconds`;
 }, 1000);
