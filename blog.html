@@ -172,12 +172,18 @@
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until
-                            the collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes control the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or overriding our default variables.
-                            It's also worth noting that just about any HTML can go within the
-                            <code>.accordion-body</code>, though the transition does limit overflow.
+                            <h3>Event loop</h3>
+                            The <strong> event loop</strong> got its name because of how it's usually implemented, which
+                            usually
+                            resembles: <br><br>
+
+                            while (queue.waitForMessage()) { <br>
+                            queue.processNextMessage();<br>
+                            } <br> <br>
+
+                            <strong>queue.waitForMessage()</strong> waits synchronously for a message to arrive (if one
+                            is not already
+                            available and waiting to be handled).
                         </div>
                     </div>
                 </div>
