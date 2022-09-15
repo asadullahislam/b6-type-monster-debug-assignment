@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+    <title>My-Blog</title>
+</head>
+
+<body class="container">
+    <header>
+        <h1 class="text-center">My Blog</h1>
+    </header>
+
+    <main>
+        <section>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <strong>Local storage vs Session storage</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <h3>What is the difference between local storage and session storage? </h3><br>
+                            “The <strong>Storage</strong> interface of the <u>Web Storage API</u> provides access to a
+                            particular domain's
+                            session or local storage. It allows, for example, the addition, modification, or deletion of
+                            stored data items.” <br>
+
+                            localStorage and sessionStorage are almost the same. Both have the following rules: <br>
+                            <br>
+
+                            They store key/value pairs for a particular domain. <br><br>
+                            The values stored may only be strings. <br> <br>
+                            They have a limit of around 5MB of storage space. <br><br>
+                            The one major difference between localStorage and sessionStorage is the expiration date.
+                            <br> <br>
+
+                            <strong>localStorage</strong> persists the storage across browser sessions. So even if the
+                            domain is opened in a new tab, or the browser is closed and reopened, the storage is saved.
+                            There is no expiration. <br>
+
+                            <strong>sessionStorage </strong> is cleared when the page session ends. A page session lasts
+                            as long as the tab or the browser is open. Therefore, when you open a new tab or a new
+                            window, this creates a new session and new storage. <br> <br>
+                            <h5>How to use local storage and session storage?</h5>
+                            You can access <strong>localStorage</strong> or <strong>sessionStorage</strong>, using the
+                            window object. <br>
+
+                            myStorage = window.localStorage; <br>
+                            myStorage = window.sessionStorage; <br> <br>
+                            For both local storage and session storage, you can set, get, remove, and clear items using
+                            the appropriate methods. <br>
+
+                            <h4> Set</h4>
+                            The <strong>setItem()</strong> method takes a key name and a value as arguments. It will
+                            then add the
+                            key/value pair to the <strong>Storage</strong> object. If the key already exists, it will
+                            update the key’s
+                            value. <br> <br>
+
+                            window.localStorage.setItem(keyName, keyValue); <br>
+                            window.sessionStorage.setItem(keyName, keyValue); <br>
+                            <h4>Get</h4>
+                            The <strong> getItem()</strong> method takes a key name as an argument. It will return that
+                            key’s value. If
+                            the key does not exist in the <strong>Storage</strong> object, it will return null. <br>
+                            <br>
+
+
+                            var aValue = window.localStorage.getItem(keyName);<br>
+                            var aValue = window.sessionStorage.getItem(keyName);<br>
+                            <h4> Remove</h4> <br>
+                            The <strong>removeItem()</strong> method takes a key name as an argument. It will remove
+                            that key from the
+                            <strong>Storage </strong> object if it exists. If there is no item associated with the key,
+                            it will do
+                            nothing. <br> <br>
+
+                            window.localStorage.removeItem(keyName); <br>
+                            window.sessionStorage.removeItem(keyName); <br>
+                            <h4> Clear</h4> <br>
+                            The <strong>clear()</strong> method will clear all keys stored in the Storage object. <br>
+                            <br>
+
+                            window.localStorage.clear(); <br>
+                            window.sessionStorage.clear(); <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <strong>Global scope vs Block scope</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p><strong>Global Scope</strong>Variables declared Globally (outside any function) have
+                                Global Scope. <br>
+
+                                Global variables can be accessed from anywhere in a JavaScript program. <br>
+
+                                Variables declared with var, let and const are quite similar when declared outside a
+                                <block class="br"></block>
+
+                                They all have Global Scope: <br>
+                                var x = 2; // Global scope <br>
+                                let x = 2; // Global scope <br>
+                                const x = 2; // Global scope
+
+
+                            </p>
+                            <p><strong>Block scope </strong>let is Block Scoped
+                                The let keyword is block-scoped (variable can be accessed only in the immediate block).
+
+                                Example 2: block-scoped Variable <br>
+                                // program showing block-scoped concept
+                                // global variable b
+                                <br>
+                                let a = 'Hello';<br>
+
+                                function greet() { <br>
+
+                                // local variable
+                                <br>
+                                let b = 'World'; <br>
+
+                                console.log(a + ' ' + b); <br>
+
+                                if (b == 'World') { <br>
+
+                                // block-scoped variable
+                                <br>
+                                let c = 'hello'; <br>
+
+                                console.log(a + ' ' + b + ' ' + c); <br>
+                                } <br>
+
+                                // variable c cannot be accessed here
+                                <br>
+                                console.log(a + ' ' + b + ' ' + c); <br>
+                                } <br>
+
+                                greet();
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <strong>What is jsva-script event loop?</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until
+                            the collapse plugin adds the appropriate classes that we use to style each element. These
+                            classes control the overall appearance, as well as the showing and hiding via CSS
+                            transitions. You can modify any of this with custom CSS or overriding our default variables.
+                            It's also worth noting that just about any HTML can go within the
+                            <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <strong>How to get undefined in java-script?</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p><strong>1.</strong>Variable with no value <br>
+                                <strong>Example:</strong>
+                                let x; <br>
+                                if (x === undefined) <br> {
+                                console.log("x is undefined") ;<br>
+                                } <br> else { <br>
+                                console.log("x is defined") <br>
+                                }
+                            </p>
+
+                            <p><strong>2.</strong>Variable that is not initialized will give undefined <br>
+                                <strong>Example:</strong>
+                                if (typeof y === "undefined"){<br>
+
+                                cosnsole.log(y is undefined)<br>
+                                } <br> else { <br>
+                                conosle.log("x is defined") <br>
+                                }
+                            </p>
+
+                            <p><strong>3.</strong>function will no return </p>
+                            <p><strong>4.</strong>parameter that is not passed will be undefined </p>
+                            <p><strong>5.</strong>if return has nothing on the right side will return undefined </p>
+                            <p><strong>6.</strong>property that dosen't exists on an object will give you undefined </p>
+                            <p><strong>7.</strong>accessing array elements outside of the index range </p>
+                            <p><strong>8.</strong>deleting on element inside an array </p>
+                            <p><strong>8.</strong> set a value directly to undefined </p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+
+
+
+</body>
+
+</html>
