@@ -154,9 +154,10 @@ button {
 }
 
 #histories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .card {
@@ -175,6 +176,7 @@ button {
       rgba(255, 255, 255, 0.05) 99.85%);
   backdrop-filter: blur(5px);
   margin-bottom: 30px;
+  flex-direction: column;
 }
 
 /* .center {
@@ -197,7 +199,7 @@ button {
 }
 
 /*  for tab  */
-/* @media only screen and (min-width: 689px) and (max-width:992px) {
+@media only screen and (min-width: 689px) and (max-width:992px) {
   .card {
     padding: 0 20px;
     width: 100%;
@@ -207,12 +209,11 @@ button {
 
   #histories {
     grid-template-columns: repeat(2, 1fr);
-    flex-direction: flex;
   }
-} */
+}
 
 /* for mobile */
-/* @media only screen and (max-width:688px) {
+@media only screen and (max-width:688px) {
   .card {
     padding: 0 20px;
     width: 100%;
@@ -222,19 +223,6 @@ button {
 
   #histories {
     grid-template-columns: repeat(1, 1fr);
-    flex-direction: flex;
+
   }
 }
-
-
-@media only screen and (min-width: 993px) {
-  .card {
-    padding: 0 20px;
-    width: 100%;
-  }
-
-
-  #histories {
-    grid-template-columns: repeat(3, 1fr);
-  }
-} */
