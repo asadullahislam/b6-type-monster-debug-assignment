@@ -93,9 +93,10 @@ const gameOver = () => {
 
   // restart everything
   startTime = null;
-  errorCount = 3;
+  errorCount = 0;
   userText = "";
   display.classList.add("inactive");
+  countdownOverlay.innerHTML = ``;
 };
 
 const closeModal = () => {
