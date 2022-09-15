@@ -62,8 +62,8 @@ body {
 
 #result {
   position: fixed;
-  top: 10%;
-  left: 10%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   height: 250px;
   width: 400px;
@@ -73,6 +73,11 @@ body {
   color: white;
   text-align: center;
   padding: 2rem;
+  /* margin: auto; */
+
+
+
+
 }
 
 #show-time {
@@ -99,6 +104,7 @@ body {
 
 .hidden {
   display: none;
+
 }
 
 .title {
@@ -171,6 +177,13 @@ button {
   margin-bottom: 30px;
 }
 
+/* .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+} */
+
 #modal-background {
   background: rgb(255, 255, 255);
   background: linear-gradient(92.49deg,
@@ -183,13 +196,34 @@ button {
   top: 0;
 }
 
-@media only screen and (max-width: 700px) {
-  .box-container {
+/*  for tab  */
+@media only screen and (min-width: 689px) and (max-width:992px) {
+  .card {
     padding: 0 20px;
     width: 100%;
   }
 
   .card {
     flex-direction: column;
+  }
+
+  #histories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*  */
+@media only screen and (min-width: 689px) and (max-width:992px) {
+  .card {
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  #histories {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
